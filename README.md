@@ -1,16 +1,16 @@
 # PingPongLevitator _ Report
 
 
-Title
+# PID Controlled Ping Pong Ball Levitation
 
-Introduction
+## Introduction
 - PID controller
 - Hardware
   - Input (sensor)
   - Output (actuator)
   - Controller
 
-Goal
+## Goal
 - Build the PingPOngLevitator
 
 - Methodology
