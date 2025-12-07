@@ -1,6 +1,3 @@
-# PingPongLevitator _ Report
-
-
 # PID Controlled Ping Pong Ball Levitation
 
 ## Introduction
