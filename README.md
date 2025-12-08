@@ -62,8 +62,8 @@ The goal of this project is to use PID control to regulate the target height and
 
 ## Appendix
 # Equations
-1. $ controller(t) = u(t) = K_p e(t) + K_i\int e(t) \mathrm{d}t + K_d$
-2. $
+1. $controller(t) = u(t) = K_p e(t) + K_i\int e(t) \mathrm{d}t + K_d\frac{\mathrm{d}e(t)}{\mathrm{d}t}$
+2. $Controller(s) = U(s) = K_p + \frac{K_i}{s} + K_ds$
 
 
 
