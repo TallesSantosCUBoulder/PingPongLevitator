@@ -25,18 +25,18 @@ _Figure 2: The Flow/Block Diagram of the ping pong ball levitator. The interacti
 
 ## Hardware
 ### Components
--1 x 25k Ω Potentiometer
--1 x 220 Ω Resistor
--1 x 12 V DC Fan
--1 x Acrylic Tube
--1 x HCSR04 Ultrasonic Sensor
--1 x Arduino Uno
--1 x Ping Pong Ball
--1 x Tiny Nut
--Tape
--1 x DRV 8871 Motor Driver
--1 x Nail
--1 x Kastar 12V 6A Power Supply
+- 1 x 25k Ω Potentiometer
+- 1 x 220 Ω Resistor
+- 1 x 12 V DC Fan
+- 1 x Acrylic Tube
+- 1 x HCSR04 Ultrasonic Sensor
+- 1 x Arduino Uno
+- 1 x Ping Pong Ball
+- 1 x Tiny Nut
+- Tape
+- 1 x DRV 8871 Motor Driver
+- 1 x Nail
+- 1 x Kastar 12V 6A Power Supply
 
 
 - PID controller
