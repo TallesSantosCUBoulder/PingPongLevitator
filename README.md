@@ -13,6 +13,11 @@
 
  With the levitator, the system follows the same format: the knob of the device is a potentiometer that serves as a voltage divider, determining the desired height (the input), which is then given to the Arduino (the controller).  The Arduino then takes the voltage, uses user-defined criteria to dictate how the Arduino converts the information into a PWM value, and outputs that value to a motor driver that spins the motor of a fan (the actuator). The force generated from the fan then moves the ball in the acrylic tube with an ultrasound sensor (sensor) on top. The sensor finally sends the height (actual output) of the ball back to the Arduino. It compares the selected height (the desired output) from the potentiometer, which then affects the calculations and output of the Arduino, thereby closing the loop. This closed-loop system that the levitator utilizes not only 
 
+## PID Controller
+  A PID controller computes a control signal based on three components: proportional, integral, and derivative control. Each of these components work to change the characteristics of the output, as shown in Figure ?. The proportional term produces an output value that is proportional to the current error value. This causes an overall decrease in the rise time and steady-state error, but increases the initial overshoot of the output. The integral term works by staying proportional to both the magnitude and duration of the error. This helps to zero out the steady-state error and lead the output to be a smaller range of values, but also increases the overshoot value. The derivative term responds to the rate of change of the error and multiplies it by an accompanying coefficient, allowing the system to predict its behavior accordingly.  This can decrease the overshoot and stabilize the system, but can potentially amplify measurement in the noise. The components of this controller can be expressed in both the time domain [Eq. 1] and Laplace domain [Eq. 2]. As stated above, the Arduino will serve as the controller, working to balance all of the coefficients as it takes in the desired height and works to move the ball with the characteristics that it is given.
+
+## Hardware
+
 - PID controller
 - Hardware
   - Input (sensor)
