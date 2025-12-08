@@ -8,6 +8,7 @@
   <img width="485" height="499" alt="image10" src="https://github.com/user-attachments/assets/8f04db30-47b2-401d-a286-e2f66904d382" />
   
   _Figure 1: Diagrams and example circuits of an open-loop and closed-loop control system. All control systems, regardless of type, have the input, controller, actuator, process, and the output._
+
   
   Control systems work to regulate the behavior of a device or process through an input and its corresponding desired output. As can be seen in Figure 1, these systems can be open or closed-looped, but both have the basic components: the input, the controller and the signal it has altered, the plant (also known as the actuator and process combined), and the output from the signal. The controller is the mechanism that dictates the output of the system will look like, using certain criteria to achieve the desired output. The plant is composed of two parts often combined into one: the actuator and the process. The actuator is the device in the system that alters or adjusts the environment in response to the signal from the controller. The process is the component of the system that is ultimately controlled or changed in such a way as to produce an output in a desired form. An example of this can be seen in Figure 1. Where the open- and closed-loop systems differ is that closed-loop systems have a sensor element that measures the actual output and compares it to the desired output, allowing the system to then make adjustments to more accurately achieve the desired output; this is the basis of how the levitator will work.
 
@@ -17,7 +18,8 @@
 
 <img width="461" height="397" alt="image6" src="https://github.com/user-attachments/assets/0156d513-a595-4a3f-8a01-977dfa4559e2" />
 
-_Figure 2: The Flow/Block Diagram of the ping pong ball levitator. The interaction between all of the components is, along with what information they transmit to each other is here as well._
+_Figure 2: The Flow/Block Diagram of the ping pong ball levitator. The interaction between all of the components, along with what information they transmit to each other, is here as well._
+
 
   A PID controller computes a control signal based on three components: proportional, integral, and derivative control. Each of these components work to change the characteristics of the output, as shown in Figure ?. The proportional term produces an output value that is proportional to the current error value. This causes an overall decrease in the rise time and steady-state error, but increases the initial overshoot of the output. The integral term works by staying proportional to both the magnitude and duration of the error. This helps to zero out the steady-state error and lead the output to be a smaller range of values, but also increases the overshoot value. The derivative term responds to the rate of change of the error and multiplies it by an accompanying coefficient, allowing the system to predict its behavior accordingly.  This can decrease the overshoot and stabilize the system, but can potentially amplify measurement in the noise. The components of this controller can be expressed in both the time domain [Eq. 1] and Laplace domain [Eq. 2]. As stated above, the Arduino will serve as the controller, working to balance all of the coefficients as it takes in the desired height and works to move the ball with the characteristics that it is given.
 
