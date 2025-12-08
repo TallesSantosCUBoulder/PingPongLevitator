@@ -57,7 +57,13 @@ The goal of this project is to use PID control to regulate the target height and
 
 - gif to show the curves and the ping pong ball
 
-Conclusion
+## Conclusion
+
+
+## Appendix
+# Equations
+1. $ controller(t) = u(t) = K_p e(t) + K_i\int e(t) \mathrm{d}t + K_d$
+2. $
 
 
 
