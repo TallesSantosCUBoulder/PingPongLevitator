@@ -76,7 +76,7 @@ Figure 4 is the result of manually tuning the K<sub>P</sub>, K<sub>I</sub>, and 
 
 ![image11-ezgif com-resize](https://github.com/user-attachments/assets/002b208c-c737-4310-9778-2a3293591285)
 
-_Figure 5: A GIF of the optimized PID controller with an added low-pass filter. While the system didn't use frequency in any capacity, the low-pass filter was able to not only ._
+_Figure 5: A GIF of the optimized PID controller with an added low-pass filter. While the system didn't use frequency in any capacity, the low-pass filter was able to not only take care of the steady-state errors from the system, but also helped in making a better controller overall._
 
 
 ## Conclusion
