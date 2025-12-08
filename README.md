@@ -78,6 +78,7 @@ Figure 4 is the result of manually tuning the K<sub>P</sub>, K<sub>I</sub>, and 
 
 _Figure 5: A GIF of the optimized PID controller with an added low-pass filter. While the system didn't use frequency in any capacity, the low-pass filter was able to not only take care of the steady-state errors from the system, but also helped in making a better controller overall._
 
+The outcome of the PID controller with the low-pass filter and the K<sub>P</sub> = 15, the K<sub>I</sub> = 5, and the K<sub>D</sub> = 7.5 made for the best controller. As seen in Figure 5, there was some overshoot in the system; the peak time was short with a low steady-state error. This allowed for the system to not only get to the desired height quickly, but to stay pretty level at that same height without too many issues.
 
 ## Conclusion
 
