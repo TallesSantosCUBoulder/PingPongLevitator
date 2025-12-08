@@ -38,12 +38,8 @@ _Figure 2: The Flow/Block Diagram of the ping pong ball levitator. The interacti
 - 1 x Nail
 - 1 x Kastar 12V 6A Power Supply
 
+  Using a prebuilt wooden stand, the base of the acrylic tube is attached to the fan. A nail is put through the tube as the platform to hold the ping pong ball above the fan without touching it. The ping pong ball, with the small nut attached using tape, is dropped inside. The tube is then covered with the ultrasonic sensor on the top and held in place with tape. At the base of the stand, the potentiometer and the resistor are connected as a voltage divider between 5V and ground. The output voltage from the voltage divider is then connected to the analog input pin 5 in the Arduino. The motor driver’s In1,  In2, and GND pins are connected to the digital pins 10 and 11 and the GND pin of the Arduino, with the driver power being connected to the power supply and the motor power being attached to the power and ground of the fan. The ultrasonic sensor’s power is connected to the 5V and GND of the Arduino. The echo pin is connected to the digital input pin 3, and the trigger pin is connected to the digital input pin 2 on the Arduino.
 
-- PID controller
-- Hardware
-  - Input (sensor)
-  - Output (actuator)
-  - Controller
 
 ## Goal
 - Build the PingPOngLevitator
