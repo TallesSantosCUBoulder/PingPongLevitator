@@ -24,6 +24,20 @@ _Figure 2: The Flow/Block Diagram of the ping pong ball levitator. The interacti
   A PID controller computes a control signal based on three components: proportional, integral, and derivative control. Each of these components work to change the characteristics of the output, as shown in Figure ?. The proportional term produces an output value that is proportional to the current error value. This causes an overall decrease in the rise time and steady-state error, but increases the initial overshoot of the output. The integral term works by staying proportional to both the magnitude and duration of the error. This helps to zero out the steady-state error and lead the output to be a smaller range of values, but also increases the overshoot value. The derivative term responds to the rate of change of the error and multiplies it by an accompanying coefficient, allowing the system to predict its behavior accordingly.  This can decrease the overshoot and stabilize the system, but can potentially amplify measurement in the noise. The components of this controller can be expressed in both the time domain [Eq. 1] and Laplace domain [Eq. 2]. As stated above, the Arduino will serve as the controller, working to balance all of the coefficients as it takes in the desired height and works to move the ball with the characteristics that it is given.
 
 ## Hardware
+### Components
+-1 x 25k Ω Potentiometer
+-1 x 220 Ω Resistor
+-1 x 12 V DC Fan
+-1 x Acrylic Tube
+-1 x HCSR04 Ultrasonic Sensor
+-1 x Arduino Uno
+-1 x Ping Pong Ball
+-1 x Tiny Nut
+-Tape
+-1 x DRV 8871 Motor Driver
+-1 x Nail
+-1 x Kastar 12V 6A Power Supply
+
 
 - PID controller
 - Hardware
