@@ -45,7 +45,16 @@ Using a prebuilt wooden stand, the base of the acrylic tube is attached to the f
 
 The goal of this project is to use PID control to regulate the target height and maintain a ping-pong ball at a target height within a vertical wind tunnel. By managing the coefficients of different aspects of the controller, the ball should be able to reach its intended height quickly and without too much error
 
-- Methodology
+## Methodology
+
+The system operates as a closed-loop feedback system. The ultrasonic sensor continuously measures the height of the ping pong ball. The Arduino compares this measured height with the desired setpoint. Based on the resulting error, the PID controller computes a corrective output. A PWM signal is then sent to the motor driver, which adjusts the fan speed. The change in fan speed moves the ball toward the setpoint, and this process repeats continuously to maintain a stable output.
+
+## Software Explanation
+
+  PID Controller V4 implements a PID based height control system. An ultrasonic sensor measures the position of an object inside a vertical tube, while a PWM driven DC fan acts as the actuator to regulate height. The desired height setpoint is defined by a potentiometer and scaled into inches. Ultrasonic sensor time of flight data is converted into distance and then into object height inside the tube. The measured height is used directly, without any digital low pass filtering, as the input to the PID controller. The PID controller compares the raw height measurement with the setpoint and generates a control signal that is constrained to a safe PWM range and inverted to match the fan’s physical behavior. System time, measured height, PID output, and setpoint are continuously logged through the Serial interface for monitoring and analysis.
+
+  PID Controller V5 implements a PID based height control system using an ultrasonic sensor and a PWM driven fan. A potentiometer defines the desired height setpoint, while the ultrasonic sensor measures the object’s position inside a vertical tube. Unlike V4, this version applies a low pass filter to the height measurement before it is used by the PID controller. The filter reduces high frequency noise and measurement fluctuations inherent to ultrasonic sensing, which can otherwise cause unstable control behavior and excessive fan oscillations. By filtering the measured height, the PID controller primarily responds to actual physical changes rather than sensor noise. The resulting control signal is smoother, more stable, and easier to tune. The PID output is limited, inverted, and applied as a PWM signal to the fan. System time, measured height, PID output, and setpoint are continuously logged over the Serial interface for monitoring and analysis.
+
 - Describe the Hardware + photos
 - Describe the software
   - Sensor (ultrassound)
