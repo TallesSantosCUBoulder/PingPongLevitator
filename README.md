@@ -42,7 +42,7 @@ _Figure 2: The Flow/Block Diagram of the ping pong ball levitator. The interacti
 
 _Figure 3: An image of the electronics of the levitator. This image shows most of the electronics attached to the wooden stand, and the nail inside the acrylic tube holding the ball._
 
-Using a prebuilt wooden stand, the base of the acrylic tube is attached to the fan. A nail is put through the tube as the platform to hold the ping pong ball above the fan without touching it. The ping pong ball, with the small nut attached using tape, is dropped inside. The tube is then covered with the ultrasonic sensor on the top and held in place with tape. At the base of the stand, the potentiometer and the resistor are connected as a voltage divider between 5V and GND. The output voltage from the voltage divider is then connected to the analog input pin 5 in the Arduino. The motor driver’s In1,  In2, and GND pins are connected to the digital pins 10 and 11 and the GND pin of the Arduino, with the driver power being connected to the power supply and the motor power being attached to the power and ground of the fan. The ultrasonic sensor’s power is connected to the 5V and GND of the Arduino. The echo pin is connected to the digital input pin 3, and the trigger pin is connected to the digital input pin 2 on the Arduino.
+Using a prebuilt wooden stand, the base of the acrylic tube is attached to the fan. A nail is put through the tube as the platform to hold the ping pong ball above the fan without touching it, as seen in Figure 3. The ping pong ball, with the small nut attached using tape, is dropped inside. The tube is then covered with the ultrasonic sensor on the top and held in place with tape. At the base of the stand, the potentiometer and the resistor are connected as a voltage divider between 5V and GND. The output voltage from the voltage divider is then connected to the analog input pin 5 in the Arduino. The motor driver’s In1,  In2, and GND pins are connected to the digital pins 10 and 11 and the GND pin of the Arduino, with the driver power being connected to the power supply and the motor power being attached to the power and ground of the fan. The ultrasonic sensor’s power is connected to the 5V and GND of the Arduino. The echo pin is connected to the digital input pin 3, and the trigger pin is connected to the digital input pin 2 on the Arduino.
 
 
 ## Goal
@@ -59,18 +59,16 @@ The system operates as a closed-loop feedback system. The ultrasonic sensor cont
 
   PID Controller V5 implements a PID based height control system using an ultrasonic sensor and a PWM driven fan. A potentiometer defines the desired height setpoint, while the ultrasonic sensor measures the object’s position inside a vertical tube. Unlike V4, this version applies a low pass filter to the height measurement before it is used by the PID controller. The filter reduces high frequency noise and measurement fluctuations inherent to ultrasonic sensing, which can otherwise cause unstable control behavior and excessive fan oscillations. By filtering the measured height, the PID controller primarily responds to actual physical changes rather than sensor noise. The resulting control signal is smoother, more stable, and easier to tune. The PID output is limited, inverted, and applied as a PWM signal to the fan. System time, measured height, PID output, and setpoint are continuously logged over the Serial interface for monitoring and analysis.
 
-- Describe the Hardware + photos
-- Describe the software
-  - Sensor (ultrassound)
-  - Actuator ()
-  - PID controller (library)
+## Results
 
-- Show tests to adjust PID controller using manual tunning
-- Comment the best results
+![image9-ezgif com-resize](https://github.com/user-attachments/assets/75edd347-f2f3-47f1-adec-f2e8bb1b7d37)
 
-- gif to show the curves and the ping pong ball
+
+_Figure 4: A gif of the incomplete and unoptimized PID controller. While the rise time is pretty low, the overshoot is extreme and the settling time is too high to even work._
 
 ## Conclusion
+
+  This project demonstrates the successful application of PID control to regulate the height of a ping pong ball using a closed-loop system. An ultrasonic sensor provided position feedback, while an Arduino-based PID controller adjusted fan speed through PWM control to maintain the desired height. Manual tuning showed that increasing proportional gain improved response speed but increased oscillation, integral control reduced steady-state error, and derivative control improved stability by damping oscillations. Overall, the system achieved stable levitation, proving that PID control is effective in this real-world application.
 
 
 ## Appendix
