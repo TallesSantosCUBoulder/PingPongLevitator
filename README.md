@@ -84,6 +84,35 @@ The outcome of the PID controller with the low-pass filter and the K<sub>P</sub>
 
   This project demonstrates the successful application of PID control to regulate the height of a ping pong ball using a closed-loop system. An ultrasonic sensor provided position feedback, while an Arduino-based PID controller adjusted fan speed through PWM control to maintain the desired height. Manual tuning showed that increasing proportional gain improved response speed but increased oscillation, integral control reduced steady-state error, and derivative control improved stability by damping oscillations. Overall, the system achieved stable levitation, proving that PID control is effective in this real-world application.
 
+# Code Explanation
+
+## MATLAB Serial Reader and Plotter
+
+This program reads data sent by the Arduino through the serial port and displays it in real time. It opens the serial port /dev/ttyUSB0 at 115200 baud, clears any old data, and continuously reads incoming characters. Characters are concatenated until a newline is detected, meaning a full line of data has arrived.
+
+Each received line is printed in the MATLAB console and parsed to extract numerical values. When exactly four numbers are found, they are stored in a data matrix. Every 100 samples, the script updates two plots: position and reference on the left, and the PWM command on the right. The loop runs continuously until the user manually stops the script in MATLAB.
+
+To use it, upload one of the Arduino sketches, ensure the correct serial port is selected, run the MATLAB script, and observe the live plots.
+
+## Arduino PID Controller – Version 4
+
+This program implements a closed-loop height controller using an ultrasonic sensor, a fan driven by PWM, a PID controller, and a potentiometer as the reference input. The ultrasonic sensor measures the height inside a tube, while the fan speed is adjusted to maintain the desired height.
+
+In the setup function, serial communication is initialized at 115200 baud, the sensor and motor pins are configured, and the PID controller is enabled in automatic mode with output limits from 0 to 255. The PID library computes the control output based on the measured height, reference height, and the defined gains.
+
+In the main loop, the potentiometer is read to generate the desired height reference. The ultrasonic sensor is triggered, and the echo time is converted to distance and then to height inside the tube. This height is used as the PID input. After computing the PID output, the corresponding PWM signal is applied to the fan. The program sends time, measured height, controller output, and reference height over serial in a fixed format so MATLAB can read and plot the data.
+
+To use this version, install the PID_v1 library, connect the hardware, upload the sketch, and run the MATLAB visualization.
+
+## Arduino PID Controller – Version 5
+
+This version builds on Version 4 by improving control stability and measurement quality. It uses new PID gains, enforces a minimum PWM value to keep the fan spinning, and adds a Butterworth low-pass filter to smooth the ultrasonic measurements.
+
+The setup is similar to Version 4 but includes additional filter libraries and sets tighter PID output limits. In the loop, the reference height is still read from the potentiometer, but the measured height from the ultrasonic sensor is filtered before being passed to the PID controller. This reduces noise and improves control performance.
+
+The filtered height, PID output, reference height, and time are sent over serial using the same general format as in Version 4, enabling real-time monitoring in MATLAB. This version is intended for improved performance once the basic system is verified.
+
+To use it, install the PID_v1 and EmotiBit filter libraries, upload the sketch, and run the MATLAB script to visualize the filtered closed-loop response.
 
 ## Appendix
 # Equations
