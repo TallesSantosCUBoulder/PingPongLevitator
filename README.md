@@ -102,7 +102,7 @@ In the setup function, serial communication is initialized at 115200 baud, the s
 
 In the main loop, the potentiometer is read to generate the desired height reference. The ultrasonic sensor is triggered, and the echo time is converted to distance and then to height inside the tube. This height is used as the PID input. After computing the PID output, the corresponding PWM signal is applied to the fan. The program sends time, measured height, controller output, and reference height over serial in a fixed format so MATLAB can read and plot the data.
 
-To use this version, install the PID_v1 library, connect the hardware, upload the sketch, and run the MATLAB visualization.
+To use this version, install the [PID_v1 library](https://github.com/br3ttb/Arduino-PID-Library), connect the hardware, upload the sketch, and run the MATLAB visualization.
 
 ## Arduino PID Controller – Version 5
 
@@ -112,7 +112,7 @@ The setup is similar to Version 4 but includes additional filter libraries and s
 
 The filtered height, PID output, reference height, and time are sent over serial using the same general format as in Version 4, enabling real-time monitoring in MATLAB. This version is intended for improved performance once the basic system is verified.
 
-To use it, install the PID_v1 and EmotiBit filter libraries, upload the sketch, and run the MATLAB script to visualize the filtered closed-loop response.
+To use it, install the [PID_v1 library](https://github.com/br3ttb/Arduino-PID-Library) and EmotiBit filter libraries, upload the sketch, and run the MATLAB script to visualize the filtered closed-loop response.
 
 ## Appendix
 # Equations
