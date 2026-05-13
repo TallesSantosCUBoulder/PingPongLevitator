@@ -5,7 +5,7 @@
 
 ## Control Systems
 
-  <img width="485" height="499" alt="image10" src="https://github.com/user-attachments/assets/8f04db30-47b2-401d-a286-e2f66904d382" />
+  <img width="500" alt="image10" src="https://github.com/user-attachments/assets/8f04db30-47b2-401d-a286-e2f66904d382" />
   
   _Figure 1: Diagrams and example circuits of an open-loop and closed-loop control system. All control systems, regardless of type, have the input, controller, actuator, process, and output._
 
@@ -13,7 +13,7 @@
   Control systems work to regulate the behavior of a device or process through an input and its corresponding desired output. As can be seen in Figure 1, these systems can be open or closed-looped, but both have the basic components: the input, the controller and the signal it has altered, the plant (also known as the actuator and process combined), and the output from the signal. The controller is the mechanism that dictates the output of the system will look like, using certain criteria to achieve the desired output. The plant is composed of two parts often combined into one: the actuator and the process. The actuator is the device in the system that alters or adjusts the environment in response to the signal from the controller. The process is the component of the system that is ultimately controlled or changed in such a way as to produce an output in a desired form. An example of this can be seen in Figure 1. Where the open- and closed-loop systems differ is that closed-loop systems have a sensor element that measures the actual output and compares it to the desired output, allowing the system to then make adjustments to more accurately achieve the desired output; this is the basis of how the levitator will work.
 
 
-<img width="461" height="397" alt="image6" src="https://github.com/user-attachments/assets/0156d513-a595-4a3f-8a01-977dfa4559e2" />
+<img width="500" alt="image6" src="https://github.com/user-attachments/assets/0156d513-a595-4a3f-8a01-977dfa4559e2" />
 
 _Figure 2: The Flow/Block Diagram of the ping pong ball levitator. The interaction between all of the components, along with what information they transmit to each other, is here as well._
 
@@ -21,7 +21,7 @@ _Figure 2: The Flow/Block Diagram of the ping pong ball levitator. The interacti
 
 ## PID Controller
 
-<img width="389" height="379" alt="image7" src="https://github.com/user-attachments/assets/c59ce5ee-cf6b-4f16-8037-c22c9a54751c" />
+<img width="500" alt="image7" src="https://github.com/user-attachments/assets/c59ce5ee-cf6b-4f16-8037-c22c9a54751c" />
 
 _Figure 2: The output of a control system controller and the types of variables that can affect the output. T<sub>r</sub> is the rise time, or how fast the output reaches the desired level. The overshoot is how much over the desired level the output reaches. Peak time, or T<sub>p</sub>, is how long until the overshoot value returns down to around 1% of the desired level, and the e<sub>ss</sub> is the steady-state error, or how far off the output is from the desired level._
 
